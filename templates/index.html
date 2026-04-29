@@ -1,0 +1,25 @@
+<h1>Contactos</h1>
+<button onclick="window.location.href='/agregar'" >nuevo contacto</button>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Celular</th>
+    <th>Acciones</th>
+</tr>
+
+{% for c in contactos %}
+<tr>
+    <td>{{ c.id }}</td>
+    <td>{{ c.nombre }}</td>
+    <td>{{ c.correo }}</td>
+    <td>{{ c.celular }}</td>
+    <td>
+        <a href="/editar/{{ c.id }}" >Editar</a>
+        <a href="/eliminar/{{ c.id }}">Eliminar</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
